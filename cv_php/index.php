@@ -1,10 +1,6 @@
+<?php include 'header.php';?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>CV SOPHIE DE BREUVAND</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
     <body>
         <div class="container-block1">
             <div class="header-text">
@@ -96,3 +92,4 @@
 
     </body>
 </html>
+<?php include 'footer.php';?>
