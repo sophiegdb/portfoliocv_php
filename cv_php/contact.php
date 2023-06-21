@@ -1,3 +1,4 @@
+<?php include 'header.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +58,8 @@
       </form>
       <br>
       <br>
-        <a href="index.html">Page 1</a>
-        <a href="hobby.html">Page 2</a>
+        <a href="index.php">Page 1</a>
+        <a href="hobby.php">Page 2</a>
 </body>
 </html>
+<?php include 'footer.php';?>

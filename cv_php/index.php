@@ -88,8 +88,7 @@
         </div>
             <br>
             <a href="hobby.php">Page 2</a>
-            <a href="contact.html">Page 3</a>
+            <a href="contact.php">Page 3</a>
 
-    </body>
-</html>
+
 <?php include 'footer.php';?>

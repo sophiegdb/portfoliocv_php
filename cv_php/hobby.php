@@ -1,4 +1,4 @@
-
+<?php include 'header.php';?>
 <body>
     <h1>La peinture abstraite</h1>
     <br>
@@ -21,6 +21,7 @@
     <br>
     <br>
         <a href="index.php">Page 1</a>
-        <a href="contact.html">Page 3</a>
+        <a href="contact.php">Page 3</a>
 
     </body>
+<?php include 'footer.php';?>
