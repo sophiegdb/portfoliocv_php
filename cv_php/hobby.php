@@ -1,3 +1,7 @@
+<?php
+$metaTittle = "hobby";
+$metaDescription = "hobby";
+?>
 <?php include 'header.php';?>
 <body>
     <h1>La peinture abstraite</h1>

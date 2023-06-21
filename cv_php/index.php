@@ -1,3 +1,7 @@
+<?php
+$metaTittle = "CV SOPHIE DE BREUVAND";
+$metaDescription ="cv sophie de Breuvand";
+?>
 <?php include 'header.php';?>
 <!DOCTYPE html>
 <html>

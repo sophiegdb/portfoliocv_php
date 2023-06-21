@@ -1,3 +1,7 @@
+<?php
+$metaTittle = "contact";
+$metaDescription = "contact";
+?>
 <?php include 'header.php';?>
 <!DOCTYPE html>
 <html lang="en">
