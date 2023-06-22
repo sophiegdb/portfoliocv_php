@@ -62,7 +62,7 @@ $metaDescription = "contact";
       </form>
       <br>
       <br>
-        <a href="index.php">Page 1</a>
+        <a href="cv.php">Page 1</a>
         <a href="hobby.php">Page 2</a>
 </body>
 </html>

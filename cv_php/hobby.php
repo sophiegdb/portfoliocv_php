@@ -24,7 +24,7 @@ $metaDescription = "hobby";
         picture-in-picture; web-share" allowfullscreen></iframe>
     <br>
     <br>
-        <a href="index.php">Page 1</a>
+        <a href="cv.php">Page 1</a>
         <a href="contact.php">Page 3</a>
 
     </body>
