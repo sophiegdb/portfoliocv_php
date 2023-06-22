@@ -91,8 +91,8 @@ $metaDescription ="cv sophie de Breuvand";
             </div>
         </div>
             <br>
-            <a href="hobby.php">Page 2</a>
-            <a href="contact.php">Page 3</a>
+        <a href="index.php?page=hobby">Page 2</a>
+        <a href="index.php?page=contact">Page 3</a>
 
 
 <?php include 'footer.php';?>
