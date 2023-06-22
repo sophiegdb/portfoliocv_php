@@ -21,23 +21,54 @@ $metaDescription = "contact";
 
     </div>
     <div class="formulaire2contact">
-        <form action="/formulaire-contact" method="post">
+        <form action="index.php?page=contact" method="post">
+            <label for="Civilité">Civilité</label>
+            <select name="Civilité" id="Civilité">
+                <option value="">--Choisissez une option svp--</option>
+                <option value="Mme">Mme</option>
+                <option value="M">M</option>
+            </select>
+            <br>
+            <br>
             <div>
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="user_name">
             </div>
+            <br>
+            <div>
+                <label for="name">Prenom :</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <br>
             <div>
                 <label for="mail">e-mail&nbsp;:</label>
                 <input type="email" id="mail" name="user_mail">
             </div>
+            <br>
             <div>
                 <label for="telephone">télephone&nbsp;:</label>
                 <input type="telephone" id="tel" name="user_tel">
             </div>
+            <br>
+            <div>
+                <fieldset>
+                    <legend>Raison du contact:</legend>
+
+                    <div>
+                        <input type="radio" id="Proposition d'emploi" name="drone" value="Proposition d'emploi"
+                               checked>
+                        <label for="Proposiion d'emploi">Proposition d'emploi</label>
+                        <input type="radio" id="demande d'info" name="drone" value="Demande d'information">
+                        <label for="demande d'info">Demande d'information</label>
+                    </div>
+                </fieldset>
+            </div>
+            <br>
             <div>
                 <label for="msg">Message :</label>
                 <textarea id="msg" name="user_message"></textarea>
             </div>
+            <br>
             <div class="button">
                 <button type="submit">Envoyer le message</button>
             </div>
