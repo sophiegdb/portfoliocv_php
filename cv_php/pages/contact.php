@@ -10,13 +10,15 @@ $raison = filter_input(INPUT_POST, "raisonducontact");
 $message = filter_input(INPUT_POST, "user_message");
 $tableaux=[$civilité,$nom,$prenom,$email,$telephone,$raison,$message];
 
-if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST['user_surname']) && !empty($_POST['user_mail']) &&
-    !empty($_POST['user_tel']) && !empty($_POST ['raisonducontact']) && !empty($_POST ['user_message']) ) {
-    file_put_contents("contact_Y-m-d-H-i-s.txt", implode(" ",$tableaux) );
-} else
+$date = date('Y-m-d-H-i-s');
+if (isset($_POST['submit_button'])) {
+    if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST['user_surname']) && !empty($_POST['user_mail']) &&
+        !empty($_POST['user_tel']) && !empty($_POST ['raisonducontact']) && !empty($_POST ['user_message'])) {
+        file_put_contents("contact/contact" . $date . ".txt", implode("\r", $tableaux));
+    }
+    }
+ include 'header.php';?>
 
-    ?>
-<?php include 'header.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,33 +37,68 @@ if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST
 
     </div>
     <div class="formulaire2contact">
-        <form action="index.php?page=contact" method="post">
+        <form action="" method="post">
             <label for="Civilité">Civilité</label>
             <select name="Civilité" id="Civilité">
                 <option value="">--Choisissez une option svp--</option>
                 <option value="Mme">Mme</option>
                 <option value="M">M</option>
             </select>
+            <?php
+            if (isset($_POST['submit_button'])) {
+                if (empty($_POST ['Civilité'])) {
+                    echo "remplir le champ svp";
+                }
+            }
+            ?>
             <br>
             <br>
             <div>
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="user_name">
+                <?php
+                if (isset($_POST['submit_button'])) {
+                    if (empty($_POST ['user_name'])) {
+                        echo "remplir le champ svp";
+                    }
+                }
+                ?>
             </div>
             <br>
             <div>
                 <label for="name">Prenom :</label>
                 <input type="text" id="name" name="user_surname">
+                <?php
+                if (isset($_POST['submit_button'])) {
+                    if (empty($_POST ['user_surname'])) {
+                        echo "remplir le champ svp";
+                    }
+                }
+                ?>
             </div>
             <br>
             <div>
                 <label for="mail">e-mail&nbsp;:</label>
                 <input type="email" id="mail" name="user_mail">
+                <?php
+                if (isset($_POST['submit_button'])) {
+                    if (empty($_POST ['user_mail'])) {
+                        echo "remplir le champ svp";
+                    }
+                }
+                ?>
             </div>
             <br>
             <div>
                 <label for="telephone">télephone&nbsp;:</label>
                 <input type="telephone" id="tel" name="user_tel">
+                <?php
+                if (isset($_POST['submit_button'])) {
+                    if (empty($_POST ['user_tel'])) {
+                        echo "remplir le champ svp";
+                    }
+                }
+                ?>
             </div>
             <br>
             <div>
@@ -74,6 +111,13 @@ if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST
                         <label for="Proposiion d'emploi">Proposition d'emploi</label>
                         <input type="radio" id="demande d'info" name="drone" value="Demande d'information">
                         <label for="demande d'info">Demande d'information</label>
+                        <?php
+                        if (isset($_POST['submit_button'])) {
+                            if (empty($_POST ['raisonducontact'])) {
+                                echo "remplir le champ svp";
+                            }
+                        }
+                        ?>
                     </div>
                 </fieldset>
             </div>
@@ -81,10 +125,17 @@ if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST
             <div>
                 <label for="msg">Message :</label>
                 <textarea id="msg" name="user_message"></textarea>
+                <?php
+                if (isset($_POST['submit_button'])) {
+                    if (empty($_POST ['user_message'])) {
+                        echo "remplir le champ svp";
+                    }
+                }
+                ?>
             </div>
             <br>
             <div class="button">
-                <button type="submit">Envoyer le message</button>
+                <button type="submit" name="submit_button">Envoyer le message</button>
             </div>
         </form>
     </div>
