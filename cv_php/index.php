@@ -1,4 +1,6 @@
 <?php
+$input = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_URL);
+echo '<a href="http://portfoliocv/index.php?page=contact"' . $page . '">Contact</a>';
 
     if ($_GET ['page'] == 'cv'){
         include 'pages/cv.php';
@@ -12,7 +14,7 @@
         include 'pages/contact.php';
     }
     else {
-        return ;
+        include 'pages/error404.php';
     }
 
 

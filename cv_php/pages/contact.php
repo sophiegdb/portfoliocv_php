@@ -1,7 +1,21 @@
 <?php
 $metaTittle = "contact";
 $metaDescription = "contact";
-?>
+$civilité = filter_input(INPUT_POST, "Civilité");
+$nom = filter_input(INPUT_POST, "user_name");
+$prenom = filter_input(INPUT_POST, "user_surname");
+$email = filter_input(INPUT_POST, "user_mail");
+$telephone = filter_input(INPUT_POST, "user_tel");
+$raison = filter_input(INPUT_POST, "raisonducontact");
+$message = filter_input(INPUT_POST, "user_message");
+$tableaux=[$civilité,$nom,$prenom,$email,$telephone,$raison,$message];
+
+if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST['user_surname']) && !empty($_POST['user_mail']) &&
+    !empty($_POST['user_tel']) && !empty($_POST ['raisonducontact']) && !empty($_POST ['user_message']) ) {
+    file_put_contents("contact_Y-m-d-H-i-s.txt", implode(" ",$tableaux) );
+} else
+
+    ?>
 <?php include 'header.php';?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +51,7 @@ $metaDescription = "contact";
             <br>
             <div>
                 <label for="name">Prenom :</label>
-                <input type="text" id="name" name="user_name">
+                <input type="text" id="name" name="user_surname">
             </div>
             <br>
             <div>
@@ -55,7 +69,7 @@ $metaDescription = "contact";
                     <legend>Raison du contact:</legend>
 
                     <div>
-                        <input type="radio" id="Proposition d'emploi" name="drone" value="Proposition d'emploi"
+                        <input type="radio" id="Proposition d'emploi" name="raisonducontact" value="Proposition d'emploi"
                                checked>
                         <label for="Proposiion d'emploi">Proposition d'emploi</label>
                         <input type="radio" id="demande d'info" name="drone" value="Demande d'information">
