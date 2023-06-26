@@ -9,7 +9,6 @@ $telephone = filter_input(INPUT_POST, "user_tel");
 $raison = filter_input(INPUT_POST, "raisonducontact");
 $message = filter_input(INPUT_POST, "user_message");
 $tableaux=[$civilité,$nom,$prenom,$email,$telephone,$raison,$message];
-
 $date = date('Y-m-d-H-i-s');
 if (isset($_POST['submit_button'])) {
     if (!empty($_POST ['Civilité']) && !empty($_POST['user_name']) && !empty($_POST['user_surname']) && !empty($_POST['user_mail']) &&
@@ -82,8 +81,11 @@ if (isset($_POST['submit_button'])) {
                 <input type="email" id="mail" name="user_mail">
                 <?php
                 if (isset($_POST['submit_button'])) {
-                    if (empty($_POST ['user_mail'])) {
-                        echo "remplir le champ svp";
+                    if (!filter_input(INPUT_GET, "email", FILTER_VALIDATE_EMAIL)) {
+                        echo("Email est correct");
+                    }
+                    else {
+                        echo("Email n'est pas correct");
                     }
                 }
                 ?>
@@ -127,10 +129,10 @@ if (isset($_POST['submit_button'])) {
                 <textarea id="msg" name="user_message"></textarea>
                 <?php
                 if (isset($_POST['submit_button'])) {
-                    if (empty($_POST ['user_message'])) {
-                        echo "remplir le champ svp";
-                    }
+                    if (strlen ($message) > 5) {
+                    } echo "Message de minimum 5 caractères";
                 }
+
                 ?>
             </div>
             <br>
